@@ -19,22 +19,25 @@ color:#333;
 function App() {
   return (
     <AppWrapper>
-    <Router>
-      <Switch>
-        <Route exact path="/tags">
-          <Tags />
-        </Route>
-        <Route exact path="/money">
-          <Money />
-        </Route>
-        <Route exact path="/statistics">
-          <Statistics />
-        </Route>
-        <Redirect exact from="/" to="/money" />
-        <Route path="*">
-          <NoMatch />
-        </Route>
-      </Switch>
+      <Router>
+        <Switch>
+          <Route exact path="/tags">
+            <Tags />
+          </Route>
+          <Route exact path="/tags/:tag">
+            <Tag />
+          </Route>
+          <Route exact path="/money">
+            <Money />
+          </Route>
+          <Route exact path="/statistics">
+            <Statistics />
+          </Route>
+          <Redirect exact from="/" to="/money" />
+          <Route path="*">
+            <NoMatch />
+          </Route>
+        </Switch>
       </Router>
     </AppWrapper>
   );
