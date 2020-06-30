@@ -28,8 +28,9 @@ body{
     line-height: 1.2;
     background: #f5f5f5;
 }
-button{
-  font-family: inherit;
+button, input{
+  //全部继承
+  font: inherit;
 }
 :focus{
   outline: none;
