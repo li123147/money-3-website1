@@ -1,10 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import React from 'react';
-import { useTags } from "useTags";
+import { useTags } from 'hooks/useTags';
 import { createId } from 'lib/createId';
+
 const Wrapper = styled.section`
   background: #FFFFFF; padding: 12px 16px;
-   flex-grow: 1; display:flex; flex-direction: column;
+  flex-grow: 1; display:flex; flex-direction: column;
   justify-content: flex-end; align-items: flex-start;
   > ol { margin: 0 -12px;
     > li{
@@ -12,7 +13,7 @@ const Wrapper = styled.section`
        display:inline-block; padding: 3px 18px; 
        font-size: 14px; margin: 8px 12px;
        &.selected{
-       background:yellowgreen;
+        background: #f60;
        }
     }
   }
@@ -22,20 +23,17 @@ const Wrapper = styled.section`
     margin-top: 8px;
   }
 `;
-
 type Props = {
   value: number[];
   onChange: (selected: number[]) => void;
 }
-
 const TagsSection: React.FC<Props> = (props) => {
   const { tags, addTag } = useTags();
   const selectedTagIds = props.value;
- 
   const onToggleTag = (tagId: number) => {
     const index = selectedTagIds.indexOf(tagId);
     if (index >= 0) {
-      //如果tag已被选中，就复制所有没有被选中的tag，作为新的selectedTag
+      // 如果 tag 已被选中，就复制所有没有被选中的 tag，作为新的 selectedTag
       props.onChange(selectedTagIds.filter(t => t !== tagId));
     } else {
       props.onChange([...selectedTagIds, tagId]);
@@ -52,10 +50,10 @@ const TagsSection: React.FC<Props> = (props) => {
           >{tag.name}</li>
         )}
       </ol>
-      <button onClick={() => {
-        addTag()
-      }}>新增标签</button>
+      <button onClick={addTag}>新增标签</button>
     </Wrapper>
   );
 };
+
+
 export { TagsSection };
