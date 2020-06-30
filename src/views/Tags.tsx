@@ -24,7 +24,7 @@ background: white;
 }
 `;
 function Tags() {
-    const { tags} = useTags();
+    const { tags,addTag} = useTags();
     return (
         <Layout>
             <TagList>
@@ -40,7 +40,7 @@ function Tags() {
             <Center>
                 <Space />
                 <Space />
-                <Button>
+                <Button onClick={addTag}>
                     新增标签
                 </Button>
             </Center>
