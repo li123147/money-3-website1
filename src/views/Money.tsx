@@ -7,6 +7,7 @@ import { NoteSection } from './Money/NoteSection';
 import { NumberPadSection } from './Money/NumberPadSection';
 import { useRecords } from '../hooks/useRecords';
 
+
 const MyLayout = styled(Layout)`
   display:flex;
   flex-direction: column;
@@ -22,7 +23,6 @@ const defaultFormData = {
 };
 
 function Money() {
-    console.log('Money 执行了');
     const [selected, setSelected] = useState(defaultFormData);
     const { records, addRecord } = useRecords();
     const onChange = (obj: Partial<typeof selected>) => {
