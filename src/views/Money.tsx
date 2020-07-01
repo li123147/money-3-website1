@@ -7,7 +7,6 @@ import { NoteSection } from './Money/NoteSection';
 import { NumberPadSection } from './Money/NumberPadSection';
 import { useRecords } from '../hooks/useRecords';
 
-
 const MyLayout = styled(Layout)`
   display:flex;
   flex-direction: column;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTags } from 'hooks/useTags';
-import { useParams ,useHistory} from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import Layout from 'components/Layout';
 import Icon from 'components/Icon';
 import { Button } from 'components/Button';
@@ -8,7 +8,6 @@ import styled from 'styled-components';
 import { Input } from '../components/Input';
 import { Center } from '../components/Center';
 import { Space } from '../components/Space';
-
 
 type Params = {
     id: string
@@ -58,13 +57,15 @@ const Tag: React.FC = () => {
     return (
         <Layout>
             <Topbar>
-                <Icon name="left" onClick={onClickBack}/>
+                <Icon name="left" onClick={onClickBack} />
                 <span>编辑标签</span>
                 <Icon />
             </Topbar>
 
-            {tag? tagContent(tag) : <Center>tag不存在</Center>}
+            {tag ? tagContent(tag) : <Center>tag 不存在</Center>}
+
         </Layout>
     );
 };
+
 export { Tag };
