@@ -1,11 +1,15 @@
+
 import styled from 'styled-components';
 import React from 'react';
 import { useTags } from 'hooks/useTags';
 
 const Wrapper = styled.section`
   background: #FFFFFF; padding: 12px 16px;
-  flex-grow: 1; display:flex; flex-direction: column;
-  justify-content: flex-end; align-items: flex-start;
+  flex-grow: 1; 
+  flex-shrink: 1; overflow: auto;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
   > ol { margin: 0 -12px;
     > li{
        background: #D9D9D9; border-radius: 18px;

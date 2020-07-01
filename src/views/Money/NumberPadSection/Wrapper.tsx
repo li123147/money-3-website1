@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+
 const Wrapper = styled.section`
- display:flex;
+  display:flex;
   flex-direction: column;
   > .output{
     background:white;
@@ -45,6 +46,16 @@ const Wrapper = styled.section`
         background:#A9A9A9;
       }
     }
+  
+    @media (max-height:570px){
+      > button{
+        height: 40px;
+        &.ok{
+          height: 80px;
+        }
+      } 
+    }
   }
 `;
+
 export { Wrapper };
