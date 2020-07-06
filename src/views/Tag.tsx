@@ -18,7 +18,7 @@ const Topbar = styled.header`
   align-items: center;
   line-height: 20px;
   padding: 14px;
-  background:white;
+  background:rgb(74,203,232);
 `;
 const InputWrapper = styled.div`
   background:white;

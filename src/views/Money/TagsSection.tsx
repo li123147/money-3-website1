@@ -1,22 +1,20 @@
-
 import styled from 'styled-components';
 import React from 'react';
 import { useTags } from 'hooks/useTags';
 
 const Wrapper = styled.section`
   background: #FFFFFF; padding: 12px 16px;
-  flex-grow: 1; 
-  flex-shrink: 1; overflow: auto;
-  display:flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-grow: 1; display:flex; flex-direction: column;
+  justify-content: flex-end; align-items: flex-start;
   > ol { margin: 0 -12px;
     > li{
-       background: #D9D9D9; border-radius: 18px;
+       border: 1px solid grey;
+       background: none; border-radius: 18px;
        display:inline-block; padding: 3px 18px; 
        font-size: 14px; margin: 8px 12px;
        &.selected{
-        background: #f60;
+        border:1px solid rgb(74,203,232); 
+        background: rgb(74,203,232);;
        }
     }
   }
@@ -36,7 +34,6 @@ const TagsSection: React.FC<Props> = (props) => {
   const onToggleTag = (tagId: number) => {
     const index = selectedTagIds.indexOf(tagId);
     if (index >= 0) {
-      // 如果 tag 已被选中，就复制所有没有被选中的 tag，作为新的 selectedTag
       props.onChange(selectedTagIds.filter(t => t !== tagId));
     } else {
       props.onChange([...selectedTagIds, tagId]);

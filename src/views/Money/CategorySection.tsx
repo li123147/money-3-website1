@@ -1,32 +1,36 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import React, { useState } from 'react';
+
 const Wrapper = styled.section`
-font-size:24px;
->ul{
+  font-size: 24px;
+  > ul{
     display:flex;
-    >li{
-        width:50%;
-        text-align:center;
-        padding:16px 0;
-        position:relative;
-        &.selected::after{
-            content:'';
-            display:block;
-            height:3px;
-            background:#333;
-            position:absolute;
-            bottom:0;
-            width:100%;
-            left:0;
-        }
+    background:rgb(74,203,232);
+    > li {
+      width: 50%; 
+      text-align:center;
+      padding: 16px 0;
+      position:relative;
+      &.selected::after{
+        content: '';
+        display:block; 
+        height: 3px;
+        background:#333;
+        position:absolute;
+        bottom:0;
+        width: 100%;
+        left: 0;
+      }
     }
-}
+  }
 `;
+
 type Props = {
     value: '-' | '+',
     onChange: (value: '-' | '+') => void;
 }
-const CategorySection: React.FC <Props> = (props) => {
+
+const CategorySection: React.FC<Props> = (props) => {
     const categoryMap = { '-': '支出', '+': '收入' };
     const [categoryList] = useState<('+' | '-')[]>(['-', '+']);
     const category = props.value;
@@ -44,4 +48,5 @@ const CategorySection: React.FC <Props> = (props) => {
         </Wrapper>
     );
 };
+
 export { CategorySection };
