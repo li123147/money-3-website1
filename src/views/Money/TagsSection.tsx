@@ -13,8 +13,8 @@ const Wrapper = styled.section`
        display:inline-block; padding: 3px 18px; 
        font-size: 14px; margin: 8px 12px;
        &.selected{
-        border:1px solid rgb(74,203,232); 
-        background: rgb(74,203,232);;
+          border:1px solid rgb(74,203,232);
+        color:rgb(74,203,232);
        }
     }
   }
